@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#06b6d4">
+<title>TM Panel Shop — Demo</title>
+<style>
+:root{--cyan:#06b6d4;--blue:#1676b9;--green:#10b981;--ink:#172033;--muted:#657286;--card:#fff;--bg:#edf5fb}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;background:linear-gradient(160deg,#eafaff,#f4f5fb 55%,#e7f8ff);color:var(--ink)}
+header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid #dceaf1;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{font-weight:900;font-size:18px;color:#087eaa}.balance{background:#e9fff6;border:1px solid #b7f0d7;border-radius:25px;padding:9px 13px;color:#07845e;font-weight:900;white-space:nowrap}.topbtn{border:0;border-radius:22px;padding:10px 13px;color:#fff;font-weight:800;background:linear-gradient(100deg,#08b8db,#7c5cff)}
+main{max-width:850px;margin:auto;padding:16px 13px 95px}.hero{border-radius:23px;padding:23px 18px;color:#fff;background:linear-gradient(125deg,#07315e,#087ea5 55%,#12b8a6);box-shadow:0 12px 28px #0d668b25;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:180px;height:180px;border:24px solid #ffffff18;border-radius:50%;right:-55px;top:-70px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;opacity:.8}.hero h1{font-size:clamp(27px,7vw,42px);line-height:1.05;margin:9px 0}.hero p{margin:9px 0 15px;color:#d6f8ff}.pill{display:inline-block;border:1px solid #ffffff70;background:#ffffff18;border-radius:20px;padding:7px 11px;font-size:12px;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}.stat,.panel{background:#fff;border:1px solid #e1edf3;border-radius:17px;padding:14px;box-shadow:0 6px 20px #244f6d09}.stat small{display:block;color:var(--muted);font-weight:700}.stat strong{font-size:22px;color:#078d70}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:24px 2px 12px}.sectionhead h2{font-size:19px;margin:0}.sectionhead span{font-size:12px;color:var(--muted)}
+.filters{display:flex;gap:8px;overflow:auto;padding-bottom:4px}.filter{border:1px solid #d8e8f1;background:#fff;border-radius:20px;padding:9px 13px;white-space:nowrap;font-weight:800;color:#425168}.filter.active{background:#087fac;color:white;border-color:#087fac}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product{background:#fff;border:1px solid #dfeaf1;border-radius:18px;padding:14px;box-shadow:0 8px 20px #234e6810;display:flex;flex-direction:column;gap:9px}.product .emoji{font-size:28px;background:#e8faff;border-radius:13px;width:53px;height:53px;display:grid;place-items:center}.product h3{font-size:16px;margin:0}.desc{font-size:12px;color:var(--muted);min-height:31px}.price{font-size:20px;font-weight:900;color:#07916d}.buy{border:0;background:linear-gradient(100deg,#0a9ed0,#10b99a);color:#fff;border-radius:11px;padding:11px 8px;font-weight:900;font-size:14px}
+.notice{margin-top:15px;background:#fff9e8;border:1px solid #f4df9e;border-radius:13px;padding:12px;font-size:12px;color:#795d13;line-height:1.6}.bottom{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid #dceaf1;display:flex;justify-content:space-around;padding:10px 5px calc(10px + env(safe-area-inset-bottom));z-index:5}.bottom a{font-size:12px;color:#526174;text-decoration:none;text-align:center;font-weight:800}.bottom b{display:block;font-size:20px}
+footer{text-align:center;color:#77869a;font-size:12px;padding:20px}
+@media(min-width:600px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{padding:32px}}
+</style>
+</head>
+<body>
+<header><div class="brand">🔷 TM PANEL SHOP</div><div class="balance">৳0.00</div><button class="topbtn" onclick="alert('এটি ডেমো সাইট। পেমেন্ট চালু করা হয়নি।')">＋ Add Funds</button></header>
+<main>
+<section class="hero"><div class="eyebrow">WELCOME TO THE STORE</div><h1>TM PANEL SHOP</h1><p>আপনার ডিজিটাল প্রোডাক্ট শপের ডেমো ওয়েবসাইট</p><span class="pill">⚡ Fast Support</span> <span class="pill">🔐 Demo Store</span></section>
+<section class="stats"><div class="stat"><small>💳 Wallet Balance</small><strong>৳0.00</strong></div><div class="stat"><small>🔑 My Keys</small><strong>0</strong></div><div class="stat"><small>🛒 Total Orders</small><strong>0</strong></div><div class="stat"><small>🎁 Referral Bonus</small><strong>৳0.00</strong></div></section>
+<div class="sectionhead"><h2>🛍️ প্রোডাক্ট ব্রাউজ করুন</h2><span>DEMO PRODUCTS</span></div>
+<div class="filters"><button class="filter active" onclick="filterProducts('all',this)">সব প্রোডাক্ট</button><button class="filter" onclick="filterProducts('android',this)">Android</button><button class="filter" onclick="filterProducts('ios',this)">iOS</button><button class="filter" onclick="filterProducts('service',this)">অন্যান্য</button></div>
+<div class="products" id="products">
+<article class="product" data-cat="android"><div class="emoji">📱</div><h3>Android Plan</h3><div class="desc">ডেমো প্যাকেজ · ১ ঘণ্টা</div><div class="price">৳10.00</div><button class="buy" onclick="demoBuy('Android Plan')">বিস্তারিত দেখুন</button></article>
+<article class="product" data-cat="android"><div class="emoji">⚡</div><h3>Premium Plan</h3><div class="desc">ডেমো প্যাকেজ · ৩ ঘণ্টা</div><div class="price">৳20.00</div><button class="buy" onclick="demoBuy('Premium Plan')">বিস্তারিত দেখুন</button></article>
+<article class="product" data-cat="ios"><div class="emoji">🍎</div><h3>iOS Plan</h3><div class="desc">নমুনা প্রোডাক্ট</div><div class="price">৳25.00</div><button class="buy" onclick="demoBuy('iOS Plan')">বিস্তারিত দেখুন</button></article>
+<article class="product" data-cat="service"><div class="emoji">🛠️</div><h3>Setup Service</h3><div class="desc">সেটআপ সহায়তার ডেমো</div><div class="price">৳0.00</div><button class="buy" onclick="demoBuy('Setup Service')">বিস্তারিত দেখুন</button></article>
+</div>
+<div class="notice">⚠️ এটি একটি ফ্রন্টএন্ড ডেমো। ব্যালেন্স, অর্ডার, লগইন বা পেমেন্ট সত্যিকারে কাজ করে না। বাস্তব বিক্রি চালু করার আগে নিরাপদ সার্ভার, ডেটাবেস, অ্যাডমিন লগইন এবং বৈধ পেমেন্ট ব্যবস্থা যোগ করতে হবে।</div>
+<footer>© 2026 TM Panel Shop · Demo Template</footer>
+</main>
+<nav class="bottom"><a href="#"><b>🏠</b>হোম</a><a href="#products"><b>🔑</b>প্রোডাক্ট</a><a href="#" onclick="alert('ডেমো: এখনো চালু নয়')"><b>🧾</b>অর্ডার</a><a href="#" onclick="alert('ডেমো: এখনো চালু নয়')"><b>👤</b>প্রোফাইল</a></nav>
+<script>
+function demoBuy(name){alert(name+' নির্বাচিত হয়েছে। এটি ডেমো—এখনো পেমেন্ট বা অর্ডার তৈরি হয় না।')}
+function filterProducts(cat,btn){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.product').forEach(p=>p.style.display=(cat==='all'||p.dataset.cat===cat)?'flex':'none')}
+</script>
+</body>
+</html>
